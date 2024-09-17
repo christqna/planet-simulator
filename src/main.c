@@ -17,8 +17,27 @@
 #define HEX5_HEX4_BASE 0xFF200030
 #define action1 (1 << 0)
 #define action2 ( 1 << 1)
+
+// define constants
 #define XRES 320
 #define YRES 240
+#define G 1E-5
+#define SUN_MASS 1E5
+#define EARTH_MASS 1
+#define EARTH_VELOCITY 0.15
+#define SUN_TO_EARTH 100
+//0.000000000066743
+#define ERRORCODE (-10000)
+#define PI 3.14159
+#define DOWNSCALE 1
+#define XRES 320
+#define YRES 240
+
+#define BOXPIXELS 15
+#define TIME_STEP 40
+
+int NUM_PLANETS = 0;
+double simulation_time = 0.0;
 
 
 volatile int * pixel_ctrl_ptr = (int *)0xFF203020;
@@ -31,8 +50,8 @@ typedef struct{
 	double x_velocity;
 	double y_velocity;
 	double distanceFromSun;
-    double x_pos;
-    double y_pos;
+    	double x_pos;
+    	double y_pos;
 	int planetColor;
 } planetPassIn;
 
@@ -86,25 +105,6 @@ struct timer_t {
        volatile unsigned int snaphi;
 };
 
-/////////RYAN GLOBALS
-
-#define G 1E-5
-#define SUN_MASS 1E5
-#define EARTH_MASS 1
-#define EARTH_VELOCITY 0.15
-#define SUN_TO_EARTH 100
-//0.000000000066743
-#define ERRORCODE (-10000)
-#define PI 3.14159
-#define DOWNSCALE 1
-#define XRES 320
-#define YRES 240
-
-#define BOXPIXELS 15
-#define TIME_STEP 40
-
-int NUM_PLANETS = 0;
-double simulation_time = 0.0;
 
 typedef struct Kepler_Variables {
 
