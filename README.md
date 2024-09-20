@@ -13,4 +13,5 @@ Customize your planet and see how it orbits!
 
 
 
+Welcome to space... ‎‧₊˚✩ 🪐✩˚₊‧
 ![](https://github.com/christqna/planet-simulator/blob/main/images/startscreen.gif)
